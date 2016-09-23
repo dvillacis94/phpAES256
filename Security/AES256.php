@@ -41,8 +41,10 @@
 		    $iv = substr(hash('sha256', $salt), 0, 16);
 	        //Encrypt the String with OpenSSL
 	        $output = openssl_encrypt($string, $encrypt_method, $key, 0, $iv);
-	        //Encode String Base 64, uncomment next line to use
+	        
+	        //Encode String Base 64,  uncomment next line to use
 	        //$output = base64_encode($output);
+	        
 			//Return Parameter
 		    return $output;			
 		}
@@ -51,8 +53,10 @@
 		public function decryptString($string, $salt) {
 			//Set to false by default
 		    $output = false;
+		    
 		    //Encode String Base 64, uncomment next line to use
 		    //$string = base64_decode($string);
+		    
 			//Set Encryption Method
 		    $encrypt_method = "AES-256-CBC";
 		    // hash
