@@ -16,7 +16,7 @@ Almost every algorithim can be broken, the real point is to force the attacker t
 
 ## Generating a Salt
 
-1. Add the `include('../classes/AES256.php');` to your PHP File,
+1. Add the `include('PATH/AES256.php');` to your PHP File,
 2. Create AES256 Object
   * `$aes = new AES256():`
 3. Gets a Salt of 32bits for AES256
@@ -26,3 +26,5 @@ Almost every algorithim can be broken, the real point is to force the attacker t
 
 1. Password encrypted using AES-256 CBC
   * `$password = $aes->encryptString($password, $salt);`
+2. Password decrypted using AES-256 CBC
+  * `$password = $aes->decryptString($saltedPassword, $salt);`
